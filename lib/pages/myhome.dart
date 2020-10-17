@@ -22,7 +22,47 @@ class _MyhomeState extends State<Myhome> {
         date: DateTime.now(),
         id: Random().nextDouble().toString(),
         title: "teste",
-        value: 100.50)
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
+    Transaction(
+        date: DateTime.now(),
+        id: Random().nextDouble().toString(),
+        title: "teste",
+        value: 100.50),
   ];
 
   void _addTrasaction(String title, double value) {
@@ -50,25 +90,23 @@ class _MyhomeState extends State<Myhome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(actions: [
-        IconButton(
-            icon: Icon(Icons.add), onPressed: () => _showModalForm(context))
-      ]),
+      appBar: AppBar(),
       body: Column(
         //mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
+              // dasboard
               height: 100,
               child: Card(
-                  color: Colors.purple,
+                  //color: Theme.of(context).primaryColor,
                   elevation: 5,
                   child: Center(
                       child: Text(
                     "dasboard",
                     style: TextStyle(fontSize: 40),
                   )))),
-          TransactionList(transactions: _transactions)
+          TransactionList(transactions: _transactions),
         ],
       ),
       floatingActionButton: FloatingActionButton(
