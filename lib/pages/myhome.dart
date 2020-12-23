@@ -1,10 +1,12 @@
 import 'dart:math';
+import 'package:expenses/components/chart.dart';
 import 'package:expenses/components/transaction_list.dart';
 import 'package:expenses/models/transactions.dart';
 import 'package:flutter/material.dart';
 import '../models/transactions.dart';
 import '../components//transaction_form.dart';
 import '../components/transaction_list.dart';
+import '../data/transaction_data.dart';
 
 class Myhome extends StatefulWidget {
   @override
@@ -12,58 +14,7 @@ class Myhome extends StatefulWidget {
 }
 
 class _MyhomeState extends State<Myhome> {
-  final List<Transaction> _transactions = [
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-    Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: "teste",
-        value: 100.50),
-  ];
+  final List<Transaction> _transactions = transactionData;
 
   void _addTrasaction(String title, double value) {
     final newTrasaction = Transaction(
@@ -91,23 +42,15 @@ class _MyhomeState extends State<Myhome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-              // dasboard
-              height: 100,
-              child: Card(
-                  //color: Theme.of(context).primaryColor,
-                  elevation: 5,
-                  child: Center(
-                      child: Text(
-                    "dasboard",
-                    style: TextStyle(fontSize: 40),
-                  )))),
-          TransactionList(transactions: _transactions),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Chart(),
+            TransactionList(transactions: _transactions),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showModalForm(context),

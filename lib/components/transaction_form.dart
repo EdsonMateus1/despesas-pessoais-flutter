@@ -22,33 +22,39 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: titleControler,
-              onSubmitted: (_) => _submitForm(),
-              style: TextStyle(fontSize: 20),
-              decoration: InputDecoration(labelText: "TITLE"),
-            ),
-            TextField(
-              controller: valueControler,
-              onSubmitted: (_) => _submitForm(),
-              style: TextStyle(fontSize: 20),
-              decoration: InputDecoration(labelText: "VALUE (R\$)"),
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-            ),
-            RaisedButton(
-                color: Theme.of(context).primaryColor,
-                onPressed: _submitForm,
-                child: Text(
-                  "nova transacao",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ))
-          ],
+    return Container(
+      height: 250,
+      child: Card(
+        elevation: 5,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              TextField(
+                controller: titleControler,
+                onSubmitted: (_) => _submitForm(),
+                style: TextStyle(fontSize: 20),
+                decoration: InputDecoration(labelText: "TITLE"),
+              ),
+              TextField(
+                controller: valueControler,
+                onSubmitted: (_) => _submitForm(),
+                style: TextStyle(fontSize: 20),
+                decoration: InputDecoration(labelText: "VALUE (R\$)"),
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  onPressed: _submitForm,
+                  child: Text(
+                    "nova transacao",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ))
+            ],
+          ),
         ),
       ),
     );
