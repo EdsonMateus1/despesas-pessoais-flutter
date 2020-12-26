@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import './pages/myhome.dart';
 
@@ -11,8 +13,20 @@ class ExpensesApp extends StatelessWidget {
     return MaterialApp(
       home: Myhome(),
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        ),
+        primarySwatch: Colors.orange,
+        accentColor: Colors.orange[900],
+        fontFamily: "OpenSans",
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline1: TextStyle(
+                fontSize: 25,
+              ),
+              headline2: TextStyle(
+                  fontFamily: "Roboto",
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
+      ),
     );
   }
 }

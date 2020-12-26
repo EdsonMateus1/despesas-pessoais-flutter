@@ -4,7 +4,7 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 150,
       child: Row(
         children: [],
       ),

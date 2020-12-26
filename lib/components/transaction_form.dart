@@ -23,7 +23,6 @@ class _TransactionFormState extends State<TransactionForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
       child: Card(
         elevation: 5,
         child: Padding(
@@ -34,24 +33,34 @@ class _TransactionFormState extends State<TransactionForm> {
                 controller: titleControler,
                 onSubmitted: (_) => _submitForm(),
                 style: TextStyle(fontSize: 20),
-                decoration: InputDecoration(labelText: "TITLE"),
+                decoration: InputDecoration(
+                  labelText: "TITLE",
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(
+                height: 20,
               ),
               TextField(
                 controller: valueControler,
                 onSubmitted: (_) => _submitForm(),
                 style: TextStyle(fontSize: 20),
-                decoration: InputDecoration(labelText: "VALUE (R\$)"),
+                decoration: InputDecoration(
+                  labelText: "VALUE (R\$)",
+                  border: OutlineInputBorder(),
+                ),
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
               ),
               SizedBox(
                 height: 20,
               ),
               RaisedButton(
-                  color: Theme.of(context).primaryColor,
+                  padding: const EdgeInsets.all(15.0),
+                  color: Theme.of(context).accentColor,
                   onPressed: _submitForm,
                   child: Text(
-                    "nova transacao",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    "Nova Trasacao",
+                    style: Theme.of(context).textTheme.headline2,
                   ))
             ],
           ),

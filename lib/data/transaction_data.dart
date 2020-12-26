@@ -3,13 +3,15 @@ import 'package:expenses/models/transactions.dart';
 
 final transactionData = [
   Transaction(
-      date: DateTime.now(),
-      id: Random().nextDouble().toString(),
-      title: "teste",
-      value: 100.50),
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de agua",
+    value: 150.20,
+  ),
   Transaction(
-      date: DateTime.now(),
-      id: Random().nextDouble().toString(),
-      title: "teste",
-      value: 100.50),
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200.50,
+  ),
 ];

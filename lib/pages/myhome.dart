@@ -45,7 +45,6 @@ class _MyhomeState extends State<Myhome> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Chart(),
             TransactionList(transactions: _transactions),
