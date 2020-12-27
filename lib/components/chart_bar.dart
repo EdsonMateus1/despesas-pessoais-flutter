@@ -10,16 +10,21 @@ class ChartBar extends StatelessWidget {
     this.percentage,
   });
   String get valueString {
-    return this.value.toStringAsFixed(2);
+    return value.toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          valueString,
-          style: Theme.of(context).textTheme.headline3,
+        Container(
+          height: 20,
+          child: FittedBox(
+            child: Text(
+              valueString,
+              style: Theme.of(context).textTheme.headline3,
+            ),
+          ),
         ),
         SizedBox(
           height: 5,
@@ -54,7 +59,10 @@ class ChartBar extends StatelessWidget {
         SizedBox(
           height: 5,
         ),
-        Text(day)
+        Container(
+          height: 20,
+          child: Text(day),
+        )
       ],
     );
   }

@@ -77,7 +77,7 @@ flutter:
         - asset: assets\fonts\Roboto-Regular.ttf
         - asset: assets\fonts\Roboto-Bold.ttf
           weight: 700
-    - family: Roboto
+    - family: Pacifico
       fonts:
         - asset: assets\fonts\Pacifico-Regular.ttf
         - asset: assets\fonts\Pacifico-Regular.ttf

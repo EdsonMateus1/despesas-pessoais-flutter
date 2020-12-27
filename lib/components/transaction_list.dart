@@ -34,48 +34,31 @@ class TransactionList extends StatelessWidget {
               itemCount: transactions.length,
               itemBuilder: (ctx, index) {
                 final tr = transactions[index];
-                return Container(
-                  child: Card(
-                    elevation: 2,
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    child: Padding(
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                  elevation: 5,
+                  child: ListTile(
+                    leading: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
-                            padding: const EdgeInsets.all(10),
-                            child: Text(
-                              "\$${tr.value.toString()}",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                tr.title,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                DateFormat("d/MMM/y").format(tr.date),
-                                style: TextStyle(color: Colors.grey),
-                              ),
-                            ],
-                          ),
-                        ],
+                      child: FittedBox(
+                        child: Text(
+                          "\$${tr.value.toStringAsFixed(2)}",
+                          style: Theme.of(context).textTheme.headline4,
+                        ),
                       ),
+                    ),
+                    title: Text(
+                      tr.title,
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                    subtitle: Text(
+                      DateFormat("d/MMM/y").format(tr.date),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ),
                 );
-              }),
+              },
+            ),
     );
   }
 }

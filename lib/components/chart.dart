@@ -35,7 +35,7 @@ class Chart extends StatelessWidget {
         "day": day,
         "value": totalSum,
       };
-    });
+    }).reversed.toList();
   }
 
   double get _weekTotalValue {
@@ -54,8 +54,7 @@ class Chart extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: _groupedTrasaction.map((tr) {
-            return Flexible(
-              fit: FlexFit.tight,
+            return Expanded(
               child: ChartBar(
                 value: tr["value"],
                 day: tr["day"],

@@ -32,10 +32,9 @@ class _TransactionFormState extends State<TransactionForm> {
               TextField(
                 controller: titleControler,
                 onSubmitted: (_) => _submitForm(),
-                style: TextStyle(fontSize: 20),
+                style: Theme.of(context).textTheme.headline4,
                 decoration: InputDecoration(
                   labelText: "TITLE",
-                  border: OutlineInputBorder(),
                 ),
               ),
               SizedBox(
@@ -44,24 +43,42 @@ class _TransactionFormState extends State<TransactionForm> {
               TextField(
                 controller: valueControler,
                 onSubmitted: (_) => _submitForm(),
-                style: TextStyle(fontSize: 20),
+                style: Theme.of(context).textTheme.headline4,
                 decoration: InputDecoration(
                   labelText: "VALUE (R\$)",
-                  border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.numberWithOptions(decimal: true),
               ),
               SizedBox(
                 height: 20,
               ),
-              RaisedButton(
-                  padding: const EdgeInsets.all(15.0),
-                  color: Theme.of(context).accentColor,
-                  onPressed: _submitForm,
-                  child: Text(
-                    "Nova Trasacao",
-                    style: Theme.of(context).textTheme.headline2,
-                  ))
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    child: FlatButton(
+                      padding: const EdgeInsets.all(2.0),
+                      // color: Theme.of(context).accentColor,
+                      onPressed: _submitForm,
+                      child: Text(
+                        "Nova Trasacao",
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 12),
+                    child: FlatButton(
+                      onPressed: () => {},
+                      child: Text(
+                        "Selecionar data",
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),
