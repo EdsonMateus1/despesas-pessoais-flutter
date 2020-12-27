@@ -48,15 +48,22 @@ class Chart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 5,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: _groupedTrasaction.map((tr) {
-          return ChartBar(
-            value: tr["value"],
-            day: tr["day"],
-            percentage: (tr["value"] as double) / _weekTotalValue,
-          );
-        }).toList(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: _groupedTrasaction.map((tr) {
+            return Flexible(
+              fit: FlexFit.tight,
+              child: ChartBar(
+                value: tr["value"],
+                day: tr["day"],
+                percentage: (tr["value"] as double) / _weekTotalValue,
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

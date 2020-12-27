@@ -52,7 +52,7 @@ class _MyhomeState extends State<Myhome> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
         child: Column(
           children: [
             SizedBox(
