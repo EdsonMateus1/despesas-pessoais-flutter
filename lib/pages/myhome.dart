@@ -28,14 +28,23 @@ class _MyhomeState extends State<Myhome> {
     Navigator.of(context).pop();
   }
 
+  List<Transaction> get _recentTrasaction {
+    return _transactions.where((tr) {
+      return tr.date.isAfter(DateTime.now().subtract(
+        Duration(days: 7),
+      ));
+    }).toList();
+  }
+
   void _showModalForm(BuildContext context) {
     showModalBottomSheet(
-        context: context,
-        builder: (_) {
-          return TransactionForm(
-            onSubmit: _addTrasaction,
-          );
-        });
+      context: context,
+      builder: (_) {
+        return TransactionForm(
+          onSubmit: _addTrasaction,
+        );
+      },
+    );
   }
 
   @override
@@ -43,10 +52,15 @@ class _MyhomeState extends State<Myhome> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
           children: [
-            Chart(),
+            SizedBox(
+              height: 20,
+            ),
+            Chart(
+              recentsTransaction: _recentTrasaction,
+            ),
             TransactionList(transactions: _transactions),
           ],
         ),

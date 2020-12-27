@@ -21,10 +21,15 @@ class ExpensesApp extends StatelessWidget {
                 fontSize: 25,
               ),
               headline2: TextStyle(
-                  fontFamily: "Roboto",
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
+                fontFamily: "Roboto",
+                fontSize: 25,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              headline3: TextStyle(
+                fontFamily: "OpenSans",
+                fontSize: 15,
+              ),
             ),
       ),
     );
