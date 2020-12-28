@@ -16,12 +16,13 @@ class Myhome extends StatefulWidget {
 class _MyhomeState extends State<Myhome> {
   final List<Transaction> _transactions = transactionData;
 
-  void _addTrasaction(String title, double value) {
+  void _addTrasaction(String title, double value, DateTime selectDate) {
     final newTrasaction = Transaction(
-        date: DateTime.now(),
-        id: Random().nextDouble().toString(),
-        title: title,
-        value: value);
+      date: selectDate,
+      id: Random().nextDouble().toString(),
+      title: title,
+      value: value,
+    );
     setState(() {
       _transactions.add(newTrasaction);
     });

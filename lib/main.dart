@@ -44,9 +44,9 @@ class ExpensesApp extends StatelessWidget {
               ),
               headline6: TextStyle(
                 fontFamily: "QuickSans",
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: Colors.orange[900],
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey,
               ),
             ),
       ),
