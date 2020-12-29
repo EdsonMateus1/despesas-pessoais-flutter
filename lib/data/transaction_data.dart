@@ -26,4 +26,46 @@ final transactionData = [
     title: "conta de luz",
     value: 200,
   ),
+  Transaction(
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200,
+  ),
+  Transaction(
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200,
+  ),
+  Transaction(
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200,
+  ),
+  Transaction(
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200,
+  ),
+  Transaction(
+    date: DateTime.now(),
+    id: Random().nextDouble().toString(),
+    title: "conta de luz",
+    value: 200,
+  ),
+  Transaction(
+    date: DateTime.now().subtract(Duration(days: 1)),
+    id: Random().nextDouble().toString(),
+    title: "present natal",
+    value: 400,
+  ),
+  Transaction(
+    date: DateTime.now().subtract(Duration(days: 1)),
+    id: Random().nextDouble().toString(),
+    title: "present natal",
+    value: 400,
+  ),
 ];

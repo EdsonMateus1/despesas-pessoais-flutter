@@ -16,9 +16,9 @@ class Myhome extends StatefulWidget {
 class _MyhomeState extends State<Myhome> {
   final List<Transaction> _transactions = transactionData;
 
-  void _addTrasaction(String title, double value, DateTime selectDate) {
+  void _addTrasaction(String title, double value, DateTime date) {
     final newTrasaction = Transaction(
-      date: selectDate,
+      date: date,
       id: Random().nextDouble().toString(),
       title: title,
       value: value,
@@ -27,6 +27,12 @@ class _MyhomeState extends State<Myhome> {
       _transactions.add(newTrasaction);
     });
     Navigator.of(context).pop();
+  }
+
+  void _removeTrasaction(String id) {
+    setState(() {
+      _transactions.removeWhere((tr) => tr.id == id);
+    });
   }
 
   List<Transaction> get _recentTrasaction {
@@ -50,21 +56,34 @@ class _MyhomeState extends State<Myhome> {
 
   @override
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: Text(
+        "EXPENSES",
+        style: Theme.of(context).appBarTheme.textTheme.headline1,
+      ),
+    );
+    final availableHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+    print(availableHeight);
     return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            Chart(
+      appBar: appBar,
+      body: Column(
+        children: [
+          Container(
+            height: availableHeight * 0.30,
+            child: Chart(
               recentsTransaction: _recentTrasaction,
             ),
-            TransactionList(transactions: _transactions),
-          ],
-        ),
+          ),
+          Container(
+            height: availableHeight * 0.65,
+            child: TransactionList(
+              transactions: _transactions,
+              onRemove: _removeTrasaction,
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showModalForm(context),

@@ -73,17 +73,17 @@ class _TransactionFormState extends State<TransactionForm> {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                  Text(
-                    DateFormat("dd/MMM/y").format(_selectDate),
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 20,
-              ),
+              // Row(
+              //   children: [
+              //     Text(
+              //       DateFormat("dd/MMM/y").format(_selectDate),
+              //       style: Theme.of(context).textTheme.headline6,
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(
+              //   height: 20,
+              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -105,7 +105,7 @@ class _TransactionFormState extends State<TransactionForm> {
                       padding: const EdgeInsets.all(0),
                       onPressed: _showDatePicker,
                       child: Text(
-                        "Data Transacao",
+                        DateFormat("dd/MMM/y").format(_selectDate),
                         style: Theme.of(context).textTheme.headline5,
                       ),
                     ),
