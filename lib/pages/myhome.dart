@@ -62,9 +62,11 @@ class _MyhomeState extends State<Myhome> {
         style: Theme.of(context).appBarTheme.textTheme.headline1,
       ),
     );
+
     final availableHeight = MediaQuery.of(context).size.height -
         appBar.preferredSize.height -
         MediaQuery.of(context).padding.top;
+
     print(availableHeight);
     return Scaffold(
       appBar: appBar,
@@ -77,7 +79,7 @@ class _MyhomeState extends State<Myhome> {
             ),
           ),
           Container(
-            height: availableHeight * 0.65,
+            height: availableHeight * 0.70,
             child: TransactionList(
               transactions: _transactions,
               onRemove: _removeTrasaction,

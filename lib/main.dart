@@ -49,7 +49,7 @@ class ExpensesApp extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             textTheme: TextTheme(
               headline1: TextStyle(
                 fontFamily: "Pacifico",

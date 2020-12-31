@@ -17,7 +17,7 @@ class TransactionList extends StatelessWidget {
                 "Nenhuma transacao cadastrada",
                 style: Theme.of(context).textTheme.headline1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Container(
@@ -34,7 +34,7 @@ class TransactionList extends StatelessWidget {
             itemBuilder: (ctx, index) {
               final tr = transactions[index];
               return Card(
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                 elevation: 5,
                 child: ListTile(
                   leading: Padding(

@@ -43,11 +43,16 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
       child: Card(
         elevation: 5,
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.only(
+            top: 10,
+            right: 10,
+            left: 10,
+            bottom: 200 + MediaQuery.of(context).viewInsets.bottom,
+          ),
           child: Column(
             children: [
               TextField(
@@ -58,7 +63,7 @@ class _TransactionFormState extends State<TransactionForm> {
                   labelText: "TITLE",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               TextField(
@@ -73,25 +78,12 @@ class _TransactionFormState extends State<TransactionForm> {
               SizedBox(
                 height: 20,
               ),
-              // Row(
-              //   children: [
-              //     Text(
-              //       DateFormat("dd/MMM/y").format(_selectDate),
-              //       style: Theme.of(context).textTheme.headline6,
-              //     ),
-              //   ],
-              // ),
-              // SizedBox(
-              //   height: 20,
-              // ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    //margin: EdgeInsets.symmetric(horizontal: 12),
                     child: FlatButton(
                       padding: const EdgeInsets.all(0),
-                      // color: Theme.of(context).accentColor,
                       onPressed: _submitForm,
                       child: Text(
                         "Nova Transacao",
@@ -100,7 +92,6 @@ class _TransactionFormState extends State<TransactionForm> {
                     ),
                   ),
                   Container(
-                    //margin: EdgeInsets.symmetric(horizontal: 12),
                     child: FlatButton(
                       padding: const EdgeInsets.all(0),
                       onPressed: _showDatePicker,
